@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Graphic Designers</title>
+  <link rel="stylesheet" href="../css/designers.css" />
+</head>
+<body>
+  <h1>Designers&Developers</h1>
+  <div class="designer-grid" id="designerList"></div>
+
+  <script>
+    const designers = [
+      { id: 1, name: "Alice Ray", rating: 4.8 },
+      { id: 2, name: "Mark Henry", rating: 4.7 },
+      { id: 3, name: "Jessica Lane", rating: 4.6 },
+      { id: 4, name: "Rahul Sinha", rating: 4.5 },
+      { id: 5, name: "Nina Dsouza", rating: 4.9 },
+      { id: 6, name: "Tom Parker", rating: 4.3 },
+      { id: 7, name: "Maya Khan", rating: 4.8 },
+      { id: 8, name: "Leo Costa", rating: 4.6 },
+      { id: 9, name: "Priya Verma", rating: 4.4 },
+      { id: 10, name: "David Smith", rating: 4.7 },
+      { id: 11, name: "Arjun", rating: 4.3 },
+      { id: 12, name: "khizar Khan", rating: 4.8 },
+      { id: 13, name: "Vijay", rating: 4.6 },
+      { id: 14, name: "chetan Verma", rating: 4.4 },
+      { id: 15, name: "somaraju", rating: 4.7 },
+    ];
+
+    const container = document.getElementById('designerList');
+    designers.forEach(d => {
+      container.innerHTML += `
+        <div class="designer-card">
+          <img src="../images/profile${d.id}.jpg" alt="${d.name}" />
+          <h3>${d.name}</h3>
+          <p>Rating: ⭐ ${d.rating}</p>
+          <a href="profile.html?id=${d.id}" class="view-btn">View Profile</a>
+        </div>
+      `;
+    });
+  </script>
+</body>
+</html>

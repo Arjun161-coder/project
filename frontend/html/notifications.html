@@ -1,0 +1,11 @@
+<div id="notifications"></div>
+<script>
+fetch('/freelancer-notifications')
+  .then(res => res.json())
+  .then(data => {
+    const container = document.getElementById("notifications");
+    data.forEach(notif => {
+      container.innerHTML += `<p>You were assigned to project: ${notif.project_title}</p>`;
+    });
+  });
+</script>

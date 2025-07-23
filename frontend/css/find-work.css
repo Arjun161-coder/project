@@ -1,0 +1,79 @@
+/* Base styles */
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #0d0d1a;
+  color: #ffffff;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  overflow-x: hidden;
+}
+
+/* Glowing heading */
+.glow {
+  text-align: center;
+  font-size: 2.5em;
+  color: #00ffc8;
+  text-shadow: 0 0 5px #00ffc8, 0 0 15px #00ffc8, 0 0 25px #00ffc8;
+  margin: 30px 0;
+  letter-spacing: 2px;
+}
+
+/* Container for project cards */
+.projects-container {
+  display: grid;
+  gap: 30px;
+  padding: 20px 40px;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Individual project card */
+.project-card {
+  background: linear-gradient(145deg, #1a1a2e, #111120);
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 0 20px rgba(0, 255, 200, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid rgba(0, 255, 200, 0.2);
+}
+
+.project-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 0 30px rgba(0, 255, 200, 0.4);
+}
+
+/* Project details */
+.project-card h2 {
+  color: #00ffc8;
+  margin-bottom: 10px;
+  font-size: 1.5em;
+}
+
+.project-card p {
+  margin: 10px 0;
+  font-size: 1em;
+  color: #d1d1d1;
+}
+
+/* Apply button */
+.project-card button {
+  margin-top: 15px;
+  padding: 10px 20px;
+  background: transparent;
+  border: 2px solid #00ffc8;
+  color: #00ffc8;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 1em;
+  letter-spacing: 1px;
+}
+
+.project-card button:hover {
+  background-color: #00ffc8;
+  color: #0d0d1a;
+  transform: scale(1.05);
+  box-shadow: 0 0 15px #00ffc8;
+}

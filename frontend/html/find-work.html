@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Find Work</title>
+  <link rel="stylesheet" href="../css/find-work.css" />
+</head>
+<body>
+  <h1 class="glow">Available Projects</h1>
+  <div class="projects-container" id="projectsContainer"></div>
+  
+
+  <script >
+    document.addEventListener('DOMContentLoaded', () => {
+  fetch('http://localhost:3000/api/projects')
+    .then(response => response.json())
+    .then(projects => {
+      const container = document.getElementById('projectsContainer');
+      if (projects.length === 0) {
+        container.innerHTML = '<p>No projects found.</p>';
+        return;
+      }
+
+      projects.forEach(project => {
+        const card = document.createElement('div');
+        card.className = 'project-card';
+        card.innerHTML = `
+  <h2>${project.name}</h2>
+  <p><strong>Description:</strong> ${project.description}</p>
+  <p><strong>Skills:</strong> ${project.skills}</p>
+  <p><strong>Budget:</strong> $${project.budget}</p>
+  <button class="apply-btn" data-project-id="${project.id}">Apply</button>
+  <div class="apply-form-container" style="display: none;">
+    <form class="apply-form" enctype="multipart/form-data">
+      <input type="hidden" name="projectId" value="${project.id}" />
+      <input type="email" name="email" class="user-email" readonly />
+      <input type="file" name="resume" required />
+      <input type="number" name="estimated_days" placeholder="Estimated days" required />
+      <input type="number" name="bid_amount" placeholder="Bid amount" required />
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+`;
+
+        container.appendChild(card);
+      });
+    })
+    .catch(error => {
+      console.error('Error loading projects:', error);
+    });
+});
+
+  </script>
+</body>
+</html>

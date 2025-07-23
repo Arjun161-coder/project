@@ -1,0 +1,71 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #0d0d1a;
+  color: white;
+  margin: 0;
+  padding: 20px;
+}
+
+h1 {
+  text-align: center;
+  font-size: 2em;
+  color: #00ffc3;
+  margin-bottom: 30px;
+}
+
+.designer-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+.designer-card {
+  background-color: #1a1a2e;
+  color: white;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 255, 200, 0.1);
+  text-align: center;
+  transition: transform 0.3s;
+}
+
+.designer-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(0, 255, 200, 0.2);
+}
+
+.designer-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.designer-card h3 {
+  margin-top: 10px;
+  font-size: 1.2em;
+  color: #00ffc3;
+}
+
+.designer-card p {
+  margin: 8px 0;
+  font-size: 0.95em;
+  color: #ccc;
+}
+
+.view-btn {
+  display: inline-block;
+  margin-top: 10px;
+  background: #00ffc3;
+  color: #0d0d1a;
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: background 0.3s;
+}
+
+.view-btn:hover {
+  background: #00e6b8;
+}

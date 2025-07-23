@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>User Profile</title>
+  <link rel="stylesheet" href="../css/my-profile.css" />
+</head>
+<body>
+  <div class="container">
+    <div class="profile-card">
+      <img src="Arjun.jpg" alt="Image"/>
+      <img id="profileImage" src="" alt="Profile Picture" />
+      <input type="text" id="image" placeholder="Image URL" class="hidden" />
+
+      <div class="field-group">
+        <label>Name:</label>
+        <input type="text" id="name" disabled />
+      </div>
+
+      <div class="field-group">
+        <label>Email:</label>
+        <input type="email" id="email" disabled />
+      </div>
+
+      <div class="field-group">
+        <label>Education:</label>
+        <input type="text" id="education" disabled />
+      </div>
+
+      <div class="field-group">
+        <label>Resume Link:</label>
+        <input type="text" id="resumeLink" disabled />
+      </div>
+
+      <div class="field-group">
+        <label>GitHub:</label>
+        <input type="text" id="github" disabled />
+      </div>
+
+      <div class="field-group">
+        <label>LinkedIn:</label>
+        <input type="text" id="linkedin" disabled />
+      </div>
+
+      <div class="field-group">
+        <label>Projects:</label>
+        <textarea id="projects" disabled></textarea>
+      </div>
+
+      <div class="field-group">
+        <label>Reviews:</label>
+        <textarea id="reviews" disabled></textarea>
+      </div>
+
+      <div class="field-group">
+        <label>Hourly Rate ($):</label>
+        <input type="text" id="hourlyRate" disabled />
+      </div>
+
+      <div class="field-group">
+        <label>Role:</label>
+        <input type="text" id="role" disabled />
+      </div>
+
+      <div class="field-group">
+        <label>Skills:</label>
+        <input type="text" id="skills" disabled />
+      </div>
+
+      <div class="field-group">
+        <label>Country:</label>
+        <input type="text" id="country" disabled />
+      </div>
+
+      <div class="btn-group">
+        <button id="editBtn">Edit</button>
+        <button id="saveBtn" class="hidden">Save</button>
+        <button id="cancelBtn" class="hidden">Cancel</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="../js/my-profile.js"></script>
+</body>
+</html>

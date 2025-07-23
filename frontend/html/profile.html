@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Freelancer Profile</title>
+  <link rel="stylesheet" href="../css/profile.css" />
+</head>
+<body>
+  <div class="profile-container">
+    <img id="profileImage" src="" alt="Profile Picture" />
+    <h2 id="profileName">Name</h2>
+    <p id="rating"></p>
+    <h3>Reviews</h3>
+    <ul id="reviews"></ul>
+    <h3>Previous Projects</h3>
+    <ul id="projects"></ul>
+  </div>
+
+  <script>
+    const urlParams = new URLSearchParams(window.location.search);
+    const id = parseInt(urlParams.get('id'));
+
+    const profiles = {
+      1: {
+        name: "Alice Ray",
+        rating: "⭐ 4.8",
+        reviews: ["Great work!", "Very professional", "Met deadlines"],
+        projects: ["Logo design", "Business card", "Brochure"]
+      },
+      2: {
+        name: "Mark Henry",
+        rating: "⭐ 4.7",
+        reviews: ["Creative", "Quick turnaround"],
+        projects: ["Poster", "Flyer", "Social media ads"]
+      },
+      
+    };
+
+    const profile = profiles[id];
+    if (profile) {
+      document.getElementById('profileImage').src = `../images/profile${id}.jpg`;
+      document.getElementById('profileName').textContent = profile.name;
+      document.getElementById('rating').textContent = profile.rating;
+      document.getElementById('reviews').innerHTML = profile.reviews.map(r => `<li>${r}</li>`).join('');
+      document.getElementById('projects').innerHTML = profile.projects.map(p => `<li>${p}</li>`).join('');
+    }
+  </script>
+</body>
+</html>

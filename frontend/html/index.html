@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Freelancer Hub</title>
+  <link rel="stylesheet" href="../css/index.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    .footer {
+      background-color: #121212;
+      color: #f1f1f1;
+      padding: 40px 20px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+
+    .footer-column {
+      flex: 1;
+      margin: 10px;
+      min-width: 200px;
+    }
+
+    .footer h3 {
+      border-bottom: 2px solid #00bfa5;
+      padding-bottom: 10px;
+      margin-bottom: 15px;
+    }
+
+    .footer-column p, .footer-column a {
+      color: #ccc;
+      text-decoration: none;
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    .footer-column a:hover {
+      color: #00bfa5;
+    }
+
+    .social-icons a {
+      color: #ccc;
+      font-size: 18px;
+      margin-right: 10px;
+    }
+
+    .social-icons a:hover {
+      color: #00bfa5;
+    }
+
+    .footer-bottom {
+      text-align: center;
+      margin-top: 30px;
+      font-size: 14px;
+      color: #777;
+      border-top: 1px solid #333;
+      padding-top: 20px;
+    }
+
+    @media (max-width: 768px) {
+      .footer {
+        flex-direction: column;
+      }
+    }
+    .faq-section {
+  background-color: #1e1e1e;
+  color: #f1f1f1;
+  padding: 50px 20px;
+}
+
+.faq-section h2 {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 28px;
+  color: white;
+}
+
+.faq {
+  max-width: 800px;
+  margin: auto;
+}
+
+.faq-item {
+  margin-bottom: 20px;
+  border-bottom: 1px solid #444;
+  padding-bottom: 10px;
+}
+
+.faq-question {
+  font-size: 18px;
+  cursor: pointer;
+  position: relative;
+}
+
+.faq-question::after {
+  content: '+';
+  position: absolute;
+  right: 0;
+  font-size: 22px;
+  color: #00bfa5;
+}
+
+.faq-item.active .faq-question::after {
+  content: '-';
+}
+
+.faq-answer {
+  display: none;
+  margin-top: 10px;
+  font-size: 15px;
+  color: #ccc;
+}
+
+.faq-item.active .faq-answer {
+  display: block;
+}
+
+  </style>
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+      <div class="logo">Freelancer<span>Hub</span></div>
+      <ul class="nav-links">
+        <li><a href="/login.html">Login</a></li>
+        <li><a href="signup.html">Signup</a></li>
+        <li><a href="post-project.html">Post Project</a></li>
+        <li><a href="hire-freelancer.html">Hire Freelancer</a></li>
+        <li><a href="find-work.html">Find Work</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Find the Best Freelancers or Work Remotely</h1>
+      <p>Connect, collaborate, and create success. FreelancerHub makes it simple.</p>
+      <a href="#" class="cta-button">Get Started</a>
+    </div>
+    <img src="Freelancers.png" alt="Freelancing" class="hero-img">
+    
+    <div class="light-effect"></div>
+  </section>
+<section class="faq-section">
+  <h2>Frequently Asked Questions</h2>
+  <div class="faq">
+    <div class="faq-item">
+      <h4 class="faq-question">What is FreelancerHub?</h4>
+      <p class="faq-answer">FreelancerHub is a platform that connects freelancers with clients looking to get work done remotely.</p>
+    </div>
+    <div class="faq-item">
+      <h4 class="faq-question">How do I post a project?</h4>
+      <p class="faq-answer">Simply sign in as a client and navigate to the Post Project page to fill out your project details.</p>
+    </div>
+    <div class="faq-item">
+      <h4 class="faq-question">How do freelancers get paid?</h4>
+      <p class="faq-answer">Freelancers get paid through the platform once the project is completed and approved by the client.</p>
+    </div>
+    <div class="faq-item">
+      <h4 class="faq-question">Can I hire freelancers from other countries?</h4>
+      <p class="faq-answer">Yes, FreelancerHub allows you to hire talent from anywhere in the world.</p>
+    </div>
+    <div class="faq-item">
+      <h4 class="faq-question">Is it free to join FreelancerHub?</h4>
+      <p class="faq-answer">Yes, both clients and freelancers can sign up for free.</p>
+    </div>
+    <div class="faq-item">
+      <h4 class="faq-question">How do I contact support?</h4>
+      <p class="faq-answer">You can contact our support team via the email or phone number listed in the footer.</p>
+    </div>
+  </div>
+</section>
+
+
+  <!-- Enhanced Footer -->
+  <footer class="footer">
+    <div class="footer-column">
+      <h3>About FreelancerHub</h3>
+      <p>FreelancerHub connects top freelance talent with global businesses. Empowering professionals to work remotely and grow their careers.</p>
+    </div>
+    <div class="footer-column">
+      <h3>Useful Links</h3>
+      <a href="#">About Us</a><br/>
+      <a href="#">How It Works</a><br/>
+      <a href="#">FAQs</a><br/>
+      <a href="#">Support</a>
+    </div>
+    <div class="footer-column">
+      <h3>Contact</h3>
+      <p>Email: support@freelancerhub.com</p>
+      <p>Phone: +91-98765-43210</p>
+      <div class="social-icons">
+        <a href="#"><i class="fab fa-facebook"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-linkedin"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      &copy; 2025 FreelancerHub. All rights reserved.
+    </div>
+  </footer>
+
+  <script>
+  document.querySelectorAll('.faq-question').forEach(question => {
+    question.addEventListener('click', () => {
+      const item = question.parentElement;
+      item.classList.toggle('active');
+    });
+  });
+  </script>
+
+</body>
+</html>

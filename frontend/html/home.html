@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Home</title>
+  <link rel="stylesheet" href="../css/index.css" /> 
+  <style>
+   
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #1e1e2f;
+  padding: 15px 40px;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.logo {
+  color: #00ffc3;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+  align-items: center;
+}
+.nav-links li a {
+  color: #00eaff;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 500;
+  transition: 0.3s;
+  padding: 8px 16px;
+  border-radius: 8px;
+}
+
+.nav-links li a:hover {
+  background-color: #2a2a3d;
+  color: #00ffc3;
+  box-shadow: 0 0 10px rgba(0, 255, 195, 0.3);
+}
+.nav-links li a.active {
+  background-color: #2a2a3d;
+  color: #00ffb7;
+  font-weight: bold;
+  box-shadow: 0 0 15px rgba(0, 255, 195, 0.6);
+}
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+.dropbtn {
+  background-color: #2a2a3d;
+  color: #00ffc3;
+  padding: 8px 16px;
+  font-size: 16px;
+  font-weight: 500;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+  box-shadow: 0 0 8px rgba(0, 255, 195, 0.15);
+}
+.dropbtn:hover {
+  background-color: #3d3d5c;
+  color: #00eaff;
+  box-shadow: 0 0 12px rgba(0, 255, 195, 0.4);
+}
+.dropdown-content {
+  display: none;
+  position: absolute;
+  right: 0;
+  top: 100%;
+  background-color: #2a2a3d;
+  min-width: 180px;
+  box-shadow: 0 4px 15px rgba(0, 255, 195, 0.15);
+  border-radius: 8px;
+  overflow: hidden;
+  z-index: 1000;
+}
+
+.dropdown-content a {
+  color: #f5f5f5;
+  padding: 12px 18px;
+  text-decoration: none;
+  display: block;
+  transition: 0.2s;
+  font-weight: 500;
+}
+
+.dropdown-content a:hover {
+  background-color: #3d3d5c;
+  color: #00ffc3;
+}
+
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+  </style>
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+      <div class="logo">FreelancerHub</div>
+      <ul class="nav-links">
+        <li>
+          <div class="dropdown">
+            <button class="dropbtn">Profile</button>
+            <div class="dropdown-content">
+              <a href="notifications.html">Notifications</a>
+              <a href="my-projects.html">My Projects</a>
+              <a href="my-profile.html">My Profile</a>
+              <a href="#" onclick="logout()">Logout</a>
+            </div>
+          </div>
+        </li>
+        <li><a href="post-project.html">Post Project</a></li>
+        <li><a href="hire-freelancer.html">Hire Freelancer</a></li>
+        <li><a href="find-work.html">Find Work</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Find the Best Freelancers or Work Remotely</h1>
+      <p>Connect, collaborate, and create success. FreelancerHub makes it simple.</p>
+      <a href="#" class="cta-button">Get Started</a>
+    </div>
+    <img src="Freelancers.png" alt="Freelancing" class="hero-img">
+    <div class="light-effect"></div>
+  </section>
+
+  <main class="container">
+    <h2>Welcome to the FreelancerHub!</h2>
+    <p id="userDetails"></p>
+  </main>
+
+  <footer>
+    <div class="footer-content">
+      <p>© 2025 FreelancerHub. All rights reserved.</p>
+      <div class="footer-links">
+        <a href="#">Privacy</a>
+        <a href="#">Terms</a>
+        <a href="#">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const user = JSON.parse(localStorage.getItem('user'));
+    if (!user) location.href = '/login';
+    else {
+      document.getElementById('userDetails').innerText = `Logged in as ${user.name} (${user.role})`;
+    }
+
+    function logout() {
+      localStorage.removeItem('user');
+      location.href = 'index.html';
+    }
+    
+  </script>
+</body>
+</html>

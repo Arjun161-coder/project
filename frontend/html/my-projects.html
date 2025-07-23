@@ -1,0 +1,28 @@
+<!-- Display projects and attached bids -->
+<div id="projects-container"></div>
+<script>
+fetch('/client-projects-with-bids')
+  .then(res => res.json())
+  .then(data => {
+    const container = document.getElementById("projects-container");
+    data.forEach(project => {
+      const projectDiv = document.createElement("div");
+      projectDiv.innerHTML = `<h3>${project.title}</h3>`;
+      project.bids.forEach(bid => {
+        projectDiv.innerHTML += `
+          <p>Freelancer: ${bid.freelancer_email}</p>
+          <p>Bid: ₹${bid.bid_amount}, Days: ${bid.estimated_days}</p>
+          <a href="/uploads/${bid.resume}" download>Resume</a>
+          <button onclick="assign(${bid.bid_id})">Assign</button>
+        `;
+      });
+      container.appendChild(projectDiv);
+    });
+  });
+
+function assign(bidId) {
+  fetch(`/assign-bid/${bidId}`, { method: 'POST' })
+    .then(res => res.json())
+    .then(data => alert(data.message));
+}
+</script>
