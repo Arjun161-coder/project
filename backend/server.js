@@ -11,6 +11,8 @@ const PORT = 3000;
 app.use(cors());
 app.use(express.json());
 app.use(express.static(path.join(__dirname, "../frontend/html")));
+app.use(express.static(path.join(__dirname, "../frontend")));
+app.use(express.static(path.join(__dirname, "../frontend/js")));
 app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 
 const db = mysql.createConnection({
@@ -29,7 +31,7 @@ const upload = multer({ dest: "uploads/" });
 
 app.get("/", (req, res) => res.sendFile(path.join(__dirname, "../frontend/html/index.html")));
 
-app.get("login.html", (req, res) => res.sendFile(path.join(__dirname, "../html/index.html")));
+app.get("login.html", (req, res) => res.sendFile(path.join(__dirname, "../frontend/html/login.html")));
 app.get("/html/:page", (req, res) => res.sendFile(path.join(__dirname, `../frontend/html/${req.params.page}.html`)));
 
 app.post("/api/signup", async (req, res) => {
@@ -60,7 +62,7 @@ app.post("/api/login", (req, res) => {
     if (!match) return res.status(401).json({ msg: "Invalid credentials" });
 
     res.status(200).json({
-      msg: "Login successful",
+      msg: "Login successful" ,
       user: {
         id: user.id,
         name: user.name,
